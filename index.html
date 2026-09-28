@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chenrui Liu | Software Engineer</title>
+    <meta
+      name="description"
+      content="Chenrui Liu's personal website for software engineering, AI applications, retrieval systems, ML systems, and backend engineering."
+    />
+    <link rel="stylesheet" href="styles.css?v=33" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Chenrui Liu home">
+        <span class="brand-mark">CL</span>
+        <span>
+          <strong>Chenrui Liu</strong>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#resume">Resume</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/lllcr6" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/chenrui-liu" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:chl339@ucsd.edu">Email</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-grid" aria-labelledby="intro-title">
+        <div class="hero-copy">
+          <h1 id="intro-title">Hi, I'm Chenrui.</h1>
+          <p class="hero-text">
+            M.S. CS candidate at UCSD, expected 2027. I enjoy turning technical ideas into usable systems,
+            from backend workflows to AI-powered applications.
+          </p>
+
+          <div class="role-strip" aria-label="Target role areas">
+            <span>Software Development</span>
+            <span>LLM Applications</span>
+            <span>AI-Assisted Coding</span>
+            <span>Fast Learner</span>
+            <span>Team Player</span>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="content-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading with-tools">
+          <div>
+            <h2 id="projects-title">Selected Projects</h2>
+          </div>
+          <div class="view-tools" aria-label="Project display controls">
+            <div class="filter-bar" role="group" aria-label="Project filters">
+              <button class="is-active" type="button" data-filter="all">All</button>
+              <button type="button" data-filter="llm-application">LLM Application</button>
+              <button type="button" data-filter="model-training">Model Training</button>
+              <button type="button" data-filter="game-development">Game Development</button>
+              <button type="button" data-filter="embedded-system">Embedded System</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <article class="artifact-card featured" data-tags="llm-application">
+            <h3>Paper Research Agent</h3>
+            <div class="project-summary">
+              <p>
+                A local AI-powered research assistant for discovering, organizing, and exporting academic papers.
+                The app supports arXiv search, paper selection, bibliography file management, PDF downloads,
+                persistent chat sessions, and both local Ollama models and OpenAI-compatible APIs.
+              </p>
+              <p>
+                I built the project with a full-stack workflow, including a Python agent backend, browser-based
+                interface, model evaluation harness, and macOS DMG packaging. I also used Codex as a coding
+                collaborator throughout development to iterate on architecture, UI behavior, testing, debugging,
+                and packaging decisions.
+              </p>
+            </div>
+            <div class="tag-row">
+              <span>AI Agent</span>
+              <span>SQLite</span>
+              <span>Agent Evaluation</span>
+              <span>macOS App</span>
+              <span>AI-Assisted Dev</span>
+            </div>
+            <div class="artifact-links split-links">
+              <a href="https://github.com/lllcr6/Research-Agent" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://youtu.be/hiqeEphghYE" target="_blank" rel="noreferrer">Demo</a>
+            </div>
+          </article>
+
+          <article class="artifact-card featured" data-tags="llm-application model-training">
+            <h3>LLM-Based Database Schema Linking</h3>
+            <div class="project-summary">
+              <p>
+                Built an LLM pipeline that identifies relevant database tables and columns from natural-language
+                questions. Fine-tuned Qwen2.5 with LoRA/SFT, ran ablation experiments across model and adapter
+                settings, and added schema-aware post-processing to improve prediction reliability.
+              </p>
+            </div>
+            <div class="tag-row">
+              <span>LLM</span>
+              <span>Text-to-SQL</span>
+              <span>LoRA</span>
+              <span>PyTorch</span>
+              <span>Transformers</span>
+            </div>
+            <div class="artifact-links">
+              <a href="https://github.com/lllcr6/CSE234-Project2" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="artifact-card" data-tags="llm-application">
+            <h3>RAG-Powered Documentation Q&amp;A</h3>
+            <div class="project-summary">
+              <p>
+                Built an end-to-end Retrieval-Augmented Generation (RAG) system for answering questions about
+                RapidFire AI documentation with grounded, source-cited responses. The system combines BM25
+                keyword search with dense embedding retrieval through Reciprocal Rank Fusion, followed by
+                cross-encoder reranking to improve retrieval relevance.
+              </p>
+              <p>
+                I also designed validation Q&A pairs and an evaluation pipeline covering retrieval precision,
+                recall, F1, and LLM-judged answer quality. Through controlled experiments on chunk size,
+                reranking thresholds, and reranker models, the best configuration achieved a retrieval score of
+                0.7699 using MiniLM-L12-v2.
+              </p>
+            </div>
+            <div class="tag-row">
+              <span>RAG</span>
+              <span>LLM</span>
+              <span>Hybrid Retrieval</span>
+              <span>Reranking</span>
+              <span>Python</span>
+            </div>
+            <div class="artifact-links">
+              <a href="https://github.com/lllcr6/CSE234-Project1" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="artifact-card" data-tags="embedded-system">
+            <h3>Memory-Efficient Micro-UAV Navigation</h3>
+            <div class="project-summary">
+              <p>
+                An embedded autonomous navigation system for resource-constrained micro-UAVs using C and FreeRTOS.
+                The system combines LiDAR-based 3D occupancy mapping with RRT* path planning, and uses a custom
+                linear memory pool plus a compact 16-bit octree node representation to reduce memory overhead.
+                The project also contributed to a granted Chinese invention patent (CN116499464B).
+              </p>
+            </div>
+            <div class="tag-row">
+              <span>C</span>
+              <span>FreeRTOS</span>
+              <span>Embedded Systems</span>
+              <span>Octree</span>
+              <span>Memory Pool</span>
+              <span>Bit Fields</span>
+              <span>RRT*</span>
+            </div>
+          </article>
+
+          <article class="artifact-card" data-tags="game-development">
+            <h3>Farm Defense</h3>
+            <div class="project-summary">
+              <p>
+                A browser-based strategy game where players defend a farm from waves of emus while growing crops,
+                upgrading defenses, completing mini-games, and answering educational quiz questions. Our team
+                followed an Agile workflow with sprint planning, retrospectives, and a GitHub Projects backlog
+                organized around user stories and implementation tasks.
+              </p>
+              <p>
+                After the course, I revisited the project with Codex to practice AI-assisted maintenance, clean up
+                unresolved bugs, and improve the polish of the final release.
+              </p>
+            </div>
+            <div class="tag-row">
+              <span>TypeScript</span>
+              <span>Agile</span>
+              <span>CI/CD</span>
+              <span>Team Project</span>
+            </div>
+            <div class="artifact-links split-links">
+              <a href="https://github.com/lllcr6/Farm-Defense" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://lllcr6.github.io/Farm-Defense/" target="_blank" rel="noreferrer">Play now</a>
+            </div>
+          </article>
+
+          <article class="artifact-card" data-tags="llm-application">
+            <h3>Flashcard Study Studio</h3>
+            <div class="project-summary">
+              <p>
+                An AI-powered flashcard study studio that turns course materials into interactive study decks. It
+                supports document upload, automated card generation, review sessions, deck management, and
+                personalized study preferences, making it easier to convert dense class content into active recall
+                practice.
+              </p>
+            </div>
+            <div class="tag-row">
+              <span>LLM API</span>
+              <span>Full-Stack</span>
+              <span>Flashcard Generator</span>
+              <span>Web Application</span>
+            </div>
+            <div class="artifact-links split-links">
+              <a href="https://github.com/lllcr6/Flashcard-Study-Studio" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://youtu.be/fI-fTzASavg" target="_blank" rel="noreferrer">Demo</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section experience-section" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <h2 id="experience-title">Work Experience</h2>
+        </div>
+        <div class="experience-layout">
+          <div class="timeline">
+            <article class="timeline-item">
+              <time>Jul 2024 - Jan 2025</time>
+              <h3>Software Development Intern · China Telecom Hongxin</h3>
+              <p>
+                During my internship at China Telecom Hongxin Information Technology, I contributed to an
+                assisted lawsuit document generation module. The feature guided users through a dynamic
+                questionnaire, routed them to different follow-up questions based on selected answers, and
+                supported multi-select branching for more complex legal scenarios. Collected answers were
+                mapped into Word templates, converted into PDF previews, uploaded to MinIO, and made available
+                through QR-code based downloads. This project gave me hands-on experience with backend API
+                design, MyBatis-Plus data access, document generation workflows, and state management for
+                branching user flows.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section experience-section" id="education" aria-labelledby="education-title">
+        <div class="section-heading">
+          <h2 id="education-title">Education Background</h2>
+        </div>
+        <div class="timeline education-timeline">
+          <article class="timeline-item">
+            <time>2025 - 2027 expected</time>
+            <h3>University of California, San Diego</h3>
+            <p>
+              M.S. in Computer Science · GPA 4.0/4.0
+              <a class="inline-transcript" href="academichistoryreviewpdf (2).pdf">transcript</a>
+            </p>
+            <div class="course-cloud">
+              <span>Deep Learning Systems</span>
+              <span>Generative AI for Programming</span>
+              <span>Natural Language Processing</span>
+              <span>AI Agents</span>
+              <span>Machine Learning</span>
+              <span>Recommender Systems</span>
+              <span>Software Engineering</span>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <time>2021 - 2025</time>
+            <h3>Southeast University</h3>
+            <p>
+              B.Eng. in Computer Science and Technology · GPA 3.81/4.0
+              <a class="inline-transcript" href="southeast_transcript(en).pdf">transcript</a>
+            </p>
+            <div class="exchange-list">
+              <p class="subtle exchange-item">
+                <span>Exchange Program at Nanyang Technological University, Singapore (Jan 2025-May 2025)</span>
+                <a class="inline-transcript disabled-link" href="#" aria-disabled="true">transcript</a>
+              </p>
+              <p class="subtle exchange-item">
+                <span>Exchange Program at University of California, San Diego (Mar 2024-June 2024)</span>
+                <a class="inline-transcript" href="ucsd学期交换成绩单.pdf">transcript</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="resume-section" id="resume" aria-labelledby="resume-title">
+        <div class="resume-copy">
+          <h2 id="resume-title">Resume</h2>
+        </div>
+        <a class="resume-preview" href="CR_resume-2.pdf" aria-label="Open resume PDF">
+          <img src="assets/resume-preview.png" alt="Preview of Chenrui Liu resume" />
+          <span class="resume-overlay">Open resume</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Codex in the loop</p>
+      <div>
+        <a href="mailto:chl339@ucsd.edu">Email</a>
+        <a href="https://github.com/lllcr6" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/chenrui-liu" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </footer>
+
+    <script src="script.js?v=33"></script>
+  </body>
+</html>
