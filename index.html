@@ -8,7 +8,20 @@
       name="description"
       content="Chenrui Liu's personal website for software engineering, AI applications, retrieval systems, ML systems, and backend engineering."
     />
-    <link rel="stylesheet" href="styles.css?v=36" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (() => {
+        const storageKey = "chenrui-theme";
+        try {
+          const storedTheme = localStorage.getItem(storageKey);
+          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.dataset.theme = storedTheme || systemTheme;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=37" />
   </head>
   <body>
     <header class="site-header">
@@ -30,6 +43,10 @@
         <a href="https://github.com/lllcr6" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/chenrui-liu" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="mailto:chl339@ucsd.edu">Email</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+          <span class="theme-toggle-text">Dark</span>
+        </button>
       </div>
     </header>
 
@@ -305,6 +322,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=36"></script>
+    <script src="script.js?v=37"></script>
   </body>
 </html>

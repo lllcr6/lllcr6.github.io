@@ -2,10 +2,44 @@ const filterButtons = document.querySelectorAll("[data-filter]");
 const cards = document.querySelectorAll(".artifact-card");
 const disabledLinks = document.querySelectorAll(".disabled-link");
 const summaries = document.querySelectorAll(".project-summary");
+const themeToggle = document.querySelector("[data-theme-toggle]");
 const projectGrid = document.querySelector(".project-grid");
 const cardList = [...cards];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const themeStorageKey = "chenrui-theme";
 let isFiltering = false;
+
+const setTheme = (theme, shouldPersist = true) => {
+  const nextTheme = theme === "dark" ? "dark" : "light";
+  document.documentElement.dataset.theme = nextTheme;
+
+  if (themeToggle) {
+    const isDark = nextTheme === "dark";
+    const label = themeToggle.querySelector(".theme-toggle-text");
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+    if (label) {
+      label.textContent = isDark ? "Light" : "Dark";
+    }
+  }
+
+  if (!shouldPersist) {
+    return;
+  }
+
+  try {
+    localStorage.setItem(themeStorageKey, nextTheme);
+  } catch {
+    // The visual toggle should still work when storage is unavailable.
+  }
+};
+
+setTheme(document.documentElement.dataset.theme, false);
+
+themeToggle?.addEventListener("click", () => {
+  const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  setTheme(nextTheme);
+});
 
 const cardMatchesFilter = (card, filter) => {
   const tags = card.dataset.tags || "";
