@@ -298,11 +298,15 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr);
+  grid-template-columns: 1fr;
   gap: clamp(28px, 6vw, 72px);
   align-items: start;
   min-height: auto;
   padding: 54px 0 16px;
+}
+
+.hero-copy {
+  width: 85%;
 }
 
 .hero-copy > *,
@@ -375,7 +379,7 @@ h3 {
 }
 
 .hero-text {
-  max-width: 720px;
+  max-width: none;
   color: var(--muted);
   font-size: clamp(18px, 2vw, 22px);
 }
@@ -916,6 +920,10 @@ h3 {
   .hero {
     min-height: auto;
     padding: 28px 0 8px;
+  }
+
+  .hero-copy {
+    width: 100%;
   }
 
   h1 {
