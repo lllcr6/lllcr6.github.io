@@ -76,7 +76,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=42" />
+    <link rel="stylesheet" href="styles.css?v=45" />
   </head>
   <body id="top">
     <header class="site-header">
@@ -146,7 +146,36 @@
           </div>
         </div>
 
-        <div class="project-grid">
+        <div class="project-grid" id="project-list" tabindex="0" aria-label="Projects; scroll horizontally to see more">
+          <article class="artifact-card featured" data-tags="llm-application">
+            <h3>E-Commerce Agent</h3>
+            <div class="project-summary">
+              <p>
+                Built an AI customer support application for a fictional U.S. pet retailer. The agent answers
+                product and policy questions with source citations using hybrid retrieval and reranking. It also
+                uses authenticated tools to look up orders and requests customer confirmation before creating
+                support tickets or refund requests.
+              </p>
+              <p>
+                Built with FastAPI and LangGraph, the application stores conversation history, streams responses
+                over SSE, and supports human handoff through a support dashboard. I also developed evaluation
+                pipelines for retrieval quality and multi-turn agent behavior.
+              </p>
+            </div>
+            <div class="tag-row">
+              <span>AI Agent</span>
+              <span>RAG</span>
+              <span>LangGraph</span>
+              <span>FastAPI</span>
+              <span>MCP</span>
+              <span>Full-Stack</span>
+            </div>
+            <div class="artifact-links split-links">
+              <a href="https://github.com/lllcr6/CommerceAgent" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://youtu.be/qCtvorLMRSI" target="_blank" rel="noreferrer">Demo</a>
+            </div>
+          </article>
+
           <article class="artifact-card featured" data-tags="llm-application">
             <h3>Paper Research Agent</h3>
             <div class="project-summary">
@@ -294,6 +323,13 @@
             </div>
           </article>
         </div>
+        <div class="project-navigation" aria-label="Project navigation">
+          <span class="project-count" aria-live="polite"></span>
+          <div class="project-navigation-buttons">
+            <button type="button" data-project-prev aria-label="Previous projects" aria-controls="project-list">&#8592;</button>
+            <button type="button" data-project-next aria-label="Next projects" aria-controls="project-list">&#8594;</button>
+          </div>
+        </div>
       </section>
 
       <section class="content-section experience-section" id="experience" aria-labelledby="experience-title">
@@ -383,6 +419,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=42"></script>
+    <script src="script.js?v=45"></script>
   </body>
 </html>
